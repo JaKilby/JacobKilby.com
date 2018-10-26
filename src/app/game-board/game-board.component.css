@@ -1,0 +1,41 @@
+:host {
+    margin: auto;
+    width: 540px;
+    display: block;
+    
+}
+
+    
+.row {
+    height: 28px;
+}
+.column {
+    border: 1px solid #37474F;
+    width: 28px; 
+    height: 28px; 
+    display: inline-block; 
+    vertical-align: middle;
+    text-align: center;
+}
+
+.snakeButton {
+    left: 8%;
+    margin: 10px;
+    position:relative;
+    
+}
+
+.buttons {
+    margin: auto;
+    display: block;
+}
+
+.blackhole {
+    position: absolute;
+    width: 1920px;
+    height: 1202px;
+    left:50%; 
+    top:50%;
+    margin-left: -960px;
+    margin-top: -601px;
+}
