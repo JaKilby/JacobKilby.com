@@ -127,7 +127,6 @@ export class GameService {
                 if(this.key_queue.length != 0)
                 {
                     self.tempDirection = this.key_queue.pop();
-                    console.log(self.tempDirection);
                 }
                 let newHead: Part = self.getNewHead();
                 if (self.boardCollision(newHead) || self.selfCollision(newHead)) {
