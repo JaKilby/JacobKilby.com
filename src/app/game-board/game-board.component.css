@@ -1,7 +1,8 @@
 :host {
     margin: auto;
-    width: 540px;
+    width: 100%;
     display: block;
+    max-width: 540px;
     
 }
 
