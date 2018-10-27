@@ -41,11 +41,13 @@ export class GameBoardComponent implements OnInit {
   switch: boolean;
   blackhole: boolean;
   score: number;
+  timer: number;
 
   constructor(private gameService: GameService) {
     this.board = this.gameService.board;
     this.switch = true;
     this.blackhole = false;
+    this.timer = 5;
    }
 
   setStyling() {
@@ -85,13 +87,25 @@ export class GameBoardComponent implements OnInit {
     }
   }
 
+  resetBlackhole(interval) {
+    clearInterval(interval);
+    this.timer = 6;
+  }
+
   showBlackHole()
   {
     this.blackhole = true;
-    setTimeout(() =>{
-      this.blackhole = !this.blackhole
-    }, 5000)
+    let count = 5;
+    let interval = setInterval(() =>{
+      if(count === 0){
+        this.blackhole = !this.blackhole;
+        this.resetBlackhole(interval);
+      }
+      this.timer+= -1;
+      count += -1;
+    }, 1000)
   }
 
+  
 
 }
