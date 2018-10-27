@@ -10,6 +10,8 @@ import { MySnakeComponent } from './game-board/my-snake/my-snake.component';
 import { GameService } from './game-service';
 import { HttpClientModule } from '@angular/common/http';
 import { MySnakeHeadComponent } from './game-board/my-snake-head/my-snake-head.component';
+import { DeviceDetectorModule } from 'ngx-device-detector';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MySnakeHeadComponent } from './game-board/my-snake-head/my-snake-head.c
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [ GameService ],
   bootstrap: [AppComponent]

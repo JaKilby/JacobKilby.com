@@ -7,6 +7,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { DeviceDetectorModule, DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-game-board',
@@ -42,8 +43,9 @@ export class GameBoardComponent implements OnInit {
   blackhole: boolean;
   score: number;
   timer: number;
+  mobile: boolean;
 
-  constructor(private gameService: GameService) {
+  constructor(private gameService: GameService, private deviceDetector: DeviceDetectorService) {
     this.board = this.gameService.board;
     this.switch = true;
     this.blackhole = false;
@@ -76,8 +78,15 @@ export class GameBoardComponent implements OnInit {
   }
 
   playSnake() {
-    this.gameService.toggle();
-    this.switch = false;
+    if(this.deviceDetector.isMobile)
+    {
+      this.switch = true;
+      this.mobile = true;
+    }
+    else {
+      this.gameService.toggle();
+      this.switch = false;
+    }
   }
 
   endSnake(event) {

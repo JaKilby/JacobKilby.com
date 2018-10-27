@@ -14,6 +14,9 @@
       </div>
   </div>
 </div>
+
+<div id="board" *ngIf="mobile">I'm sorry but snake does not currently work on mobile, please visit this site on a computer to play snake!</div>
+
 <div class = "container" *ngIf="blackhole">
   <img src="https://vignette.wikia.nocookie.net/steamtradingcards/images/7/73/Really_Big_Sky_Background_Black_Hole.jpg/revision/latest?cb=20131005051936" class="blackhole">
   <div class="centered">{{timer}}</div>

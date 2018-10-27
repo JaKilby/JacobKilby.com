@@ -28,6 +28,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
+    "ngx-device-detector": "^1.3.4",
     "path": "^0.12.7",
     "rxjs": "~6.2.0",
     "typescript": "~2.9.2",
