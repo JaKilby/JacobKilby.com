@@ -36,6 +36,7 @@ export class PageComponent implements OnInit {
     content = 'My name is Jacob Kilby.\
     I\'m currently a senior at the University of Michigan studying Computer Science, and\
     I built this website to showcase a small part of my skills in Angular.\
+    I\'m currently searching for full time full stack and front end software engineering positions. \
     I hope you enjoy looking around, playing snake, and hunting for the secret!';
 
   constructor() { }
