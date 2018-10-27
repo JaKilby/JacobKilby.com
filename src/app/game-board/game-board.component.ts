@@ -50,6 +50,7 @@ export class GameBoardComponent implements OnInit {
     this.switch = true;
     this.blackhole = false;
     this.timer = 5;
+    this.mobile = false;
    }
 
   setStyling() {
@@ -86,6 +87,7 @@ export class GameBoardComponent implements OnInit {
     else {
       this.gameService.toggle();
       this.switch = false;
+      this.mobile = false;
     }
   }
 
