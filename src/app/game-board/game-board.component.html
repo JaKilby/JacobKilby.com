@@ -4,7 +4,7 @@
 <button mat-raised-button color="warn" *ngIf="switch" class="snakeButton" (click)="showBlackHole()">Do not press!</button>
 </div>
 
-<div id="board" [style.background-color]="setStyling()"  [@play] (@play.done)="endSnake($event)" *ngIf="gameService.play" >
+<div id="board" [style.background-color]="setStyling()"  [@play] (@play.done)="endSnake($event)" *ngIf="gamePlaying()">
   <div class="row" *ngFor="let column of board; let y=index">
     <div class="column"
       *ngFor="let row of column; let x=index; trackBy:x">

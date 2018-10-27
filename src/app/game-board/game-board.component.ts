@@ -64,6 +64,10 @@ export class GameBoardComponent implements OnInit {
   setHead(col: number, row: number) {
     return this.gameService.getSnakeHead(col, row);
   }
+
+  gamePlaying() {
+    return this.gameService.play;
+  }
   
 
   ngOnInit() {
