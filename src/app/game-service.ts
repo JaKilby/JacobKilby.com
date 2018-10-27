@@ -66,7 +66,15 @@ export class GameService {
                 case KEYS.RIGHT:
                     this.key_queue.unshift(KEYS.RIGHT);
                     break;
+                case KEYS.B:
+                    this.key_queue.unshift(KEYS.B);
+                    break;
+                case KEYS.A:
+                    this.key_queue.unshift(KEYS.A);
+                    break;
                 }
+                
+
         });
     }
 

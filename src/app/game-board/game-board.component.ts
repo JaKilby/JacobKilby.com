@@ -78,7 +78,7 @@ export class GameBoardComponent implements OnInit {
   }
 
   playSnake() {
-    if(this.deviceDetector.isMobile)
+    if(this.deviceDetector.isMobile())
     {
       this.switch = true;
       this.mobile = true;
@@ -99,10 +99,15 @@ export class GameBoardComponent implements OnInit {
   resetBlackhole(interval) {
     clearInterval(interval);
     this.timer = 6;
+    while(this.gameService.key_queue.length > 0)
+    {
+      console.log(this.gameService.key_queue.pop());
+    }
   }
 
   showBlackHole()
   {
+    let konami = "ABRLRLDDUU";
     this.blackhole = true;
     let count = 5;
     let interval = setInterval(() =>{
@@ -112,6 +117,46 @@ export class GameBoardComponent implements OnInit {
       }
       this.timer+= -1;
       count += -1;
+      let keys = "";
+      if(this.gameService.key_queue.length === 10)
+      {
+      this.gameService.key_queue.forEach((key_code) => {
+        console.log(key_code);
+          if(key_code === 38)
+          {
+            keys += 'U';
+          }
+          else if(key_code === 40)
+          {
+            keys += 'D';
+          }
+          else if(key_code === 37)
+          {
+            keys += 'L';
+          }
+          else if(key_code === 39)
+          {
+            keys += 'R';
+          }
+          else if(key_code === 66)
+          {
+            keys += 'B';
+          }
+          else if(key_code === 65)
+          {
+            keys += 'A';
+          }
+      });
+      if(keys === konami)
+      {
+        alert("You found the secret!");
+        while(this.gameService.key_queue.length > 0)
+        {
+          this.gameService.key_queue.pop();
+        }
+      }
+    }
+
     }, 1000)
   }
 

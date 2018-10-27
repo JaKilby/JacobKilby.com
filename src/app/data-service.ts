@@ -10,5 +10,7 @@ export const KEYS = {
     DOWN: 40,
     ESC: 27,
     SPACE_BAR: 32,
-    ENTER: 13
+    ENTER: 13,
+    B: 66,
+    A: 65
 };
